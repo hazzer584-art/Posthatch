@@ -1,16 +1,20 @@
 # PostHatch Studio
 
-Pre-launch website for an AI-assisted social media content service.
+Public pre-launch website for an AI-assisted social media content service. This project is separate from Zelquiva.
 
-## Getting started
+## What's in this repository
 
-The public-facing website belongs inside the `website/` folder. Connect this GitHub repository to Netlify; the included `netlify.toml` publishes `website`.
+- `website.tar.br` — compressed bundle containing all 16 public website files, including the homepage, styling, scripts, privacy template and eight original sample graphics.
+- `scripts/unpack-website.cjs` — extracts the website bundle during Netlify builds.
+- `netlify.toml` — tells Netlify how to build and publish the website.
 
-### Safety and launch status
+The site bundle contains **no** private content-planning tool, contracts, credentials or customer information. The enquiry form is intentionally **disabled** and there is **no payment integration**.
 
-- The enquiry form is deliberately disabled until the responsible adult/business operator confirms a contact and privacy notice.
-- No payments are enabled.
-- Do **not** commit the `private-studio/` folder or client data to this public repository.
-- This project is separate from Zelquiva.
+## How to publish a preview
 
-To add website files from the existing PostHatch starter ZIP, extract the `website/` folder and upload its contents into this repository's `website/` folder.
+1. With a parent or guardian, open Netlify and choose **Add new project** → **Import an existing project** → **GitHub**.
+2. Choose `hazzer584-art/Posthatch`.
+3. Use the repository's `netlify.toml` build settings (build command: `node scripts/unpack-website.cjs`; publish directory: `website`).
+4. Deploy and inspect the site. Do not enable the contact form or payments until the responsible adult/business operator has reviewed and completed the privacy information and business setup.
+
+**Note:** Website files are bundled to make the first upload work through ChatGPT's GitHub connection. To edit individual HTML/CSS files in GitHub, extract them from the supplied public website ZIP and commit them under the `website/` directory, then remove the archive/build unpack step. Do not upload the `private-studio` folder into this public repository.

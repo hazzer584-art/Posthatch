@@ -1,4 +1,5 @@
 [build]
+  command = "node scripts/unpack-website.cjs"
   publish = "website"
 
 [[headers]]
